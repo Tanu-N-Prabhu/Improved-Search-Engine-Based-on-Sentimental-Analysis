@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<h1> Search Results</h1>
+
+{% csrf_token %}
+{% for x in result %}
+<tr><td><li><font size="6" color="red">
+{{x}}</font></li></td></tr>
+{% endfor %}
+
+</html>

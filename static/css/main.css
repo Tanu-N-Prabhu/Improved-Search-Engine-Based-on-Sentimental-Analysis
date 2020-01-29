@@ -60,7 +60,7 @@ form.example::after {
 
 body {
 
-  background-image: url("/static/Img/img.jpg");
+  background-image: url("/static/img/img.jpg");
   /* Full height */
   height: auto; 
   /* Center and scale the image nicely */
