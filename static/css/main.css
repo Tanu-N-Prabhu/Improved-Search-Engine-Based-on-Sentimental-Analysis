@@ -1,15 +1,93 @@
+
 body {
-    margin: 0;
-    padding: 0;
+  font-family: Arial;
+  margin-top: 200px;
+  margin-left: 25%;
+  margin-right:25%;  
+  max-width:100px:
+    
 }
-.header
-{
-    height:100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/static/img/img1.gif");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    font-family: sans-serif;
+
+h1 {
+    color: black;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    
+    margin-bottom: 50px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+    
+}
+
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+    
+}
+
+form.example button:hover {
+  background: #0b7dda;
+    
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+    
+}
+
+
+body {
+
+  background-image: url("/static/Img/img.jpg");
+  /* Full height */
+  height: auto; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial;
+  margin-top: 200px;
+  margin-left: 25%;
+  margin-right:25%;  
+  max-width:100px:
+    height: 100%;
+
+}
+
+h1 {
+    color: black;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+   
