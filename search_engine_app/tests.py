@@ -28,6 +28,7 @@ def search_web(topic):
 
 def extract_content(URL):
     """This function takes URL as input and parse it to beautiful soup library to extract content and also clean it at the primary level with basic blacklist filter
+    Source: https://matix.io/extract-text-from-webpage-using-beautifulsoup-and-python/
     Input:
         URL- needs to be extracted
     Output:
@@ -52,15 +53,22 @@ def extract_content(URL):
         if t.parent.name not in blacklist:
             output += '{} '.format(t)
     output="".join([s for s in output.strip().splitlines(True) if s.strip()])
-    final_output.append("\n URL--%s \n Result--\n %s \n\n"%(URL,output[:1000]))
+    final_output[URL]=output[:5000]
     return output[:1000]
 
 # Create your tests here.
 
 def thread_func(topic):
+    """This function takes topic to be searched on web. First step will  be getting the list of URLs and second is thred function to extract content
+    Input:
+    topic- to be searched on web
+    Output:
+    final_output(Dict): consists URL as key and Description as value
+    """
+    
     web_result_list=search_web(topic)
     global final_output
-    final_output=[]
+    final_output={}
     threads = [threading.Thread(target=extract_content, args=(url,)) for url in web_result_list]
     for thread in threads:
       thread.start()

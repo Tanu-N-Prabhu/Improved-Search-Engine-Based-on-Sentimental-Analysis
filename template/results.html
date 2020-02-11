@@ -4,9 +4,9 @@
 <h1> Search Results</h1>
 
 {% csrf_token %}
-{% for x in result %}
-<tr><td><li><font size="6" color="red">
-{{x}}</font></li></td></tr>
+{% for key, value in result.items %}
+<tr><td><li> <li>URL: <a href="{{key}}">{{key}}</a> <br> Desc: {{value}}</li></li></td></tr>
 {% endfor %}
 
 </html>
+
