@@ -27,34 +27,23 @@ def search_web(topic):
     return web_result_list
 
 def extract_content(URL):
-    """This function takes URL as input and parse it to beautiful soup library to extract content and also clean it at the primary level with basic blacklist filter
-    Source: https://matix.io/extract-text-from-webpage-using-beautifulsoup-and-python/
+    """This funct   ion takes URL as input and parse it to beautiful soup library to extract content and also clean it at the primary level with basic blacklist filter
+    Source: https://stackoverflow.com/questions/328356/extracting-text-from-html-file-using-python
     Input:
         URL- needs to be extracted
     Output:
         text- extracted text"""
-    res = requests.get(URL)
-    html_page = res.content
-    soup = BeautifulSoup(html_page, 'html.parser')
-    text = soup.find_all(text=True)
-    output = ''
-    blacklist = [
-	'[document]',
-	'noscript',
-	'header',
-	'html',
-	'meta',
-	'head', 
-	'input',
-	'script',
-	# there may be more elements you don't want, such as "style", etc.
-    ]
-    for t in text:
-        if t.parent.name not in blacklist:
-            output += '{} '.format(t)
-    output="".join([s for s in output.strip().splitlines(True) if s.strip()])
-    final_output[URL]=output[:5000]
-    return output[:1000]
+    html = urllib.request.urlopen(URL).read()
+    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html)
+    for script in soup(["script", "style"]):
+        script.extract()
+    text = soup.get_text()
+    lines = (line.strip() for line in text.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    text = '\n'.join(chunk for chunk in chunks if chunk)
+    final_output[URL]=text[:5000]
+    return text[:1000]
 
 # Create your tests here.
 
