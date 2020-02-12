@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-<h1> Search Results</h1>
+
 
 {% csrf_token %}
+<h1 align = "center"> Search Results </h1> 
+
 {% for key, value in result.items %}
-<tr><td><li> <li>URL: <a href="{{key}}">{{key}}</a> <br> Desc: {{value}}</li></li></td></tr>
+    
+
+
+        <br> 
+        <h3><a href="{{key}}">{{key}}</a></h3> 
+        
+        <p align = "justify">{{value}}</p>
+        <br>
+
+    
+
+
 {% endfor %}
+   
+
+
 
 </html>
-
