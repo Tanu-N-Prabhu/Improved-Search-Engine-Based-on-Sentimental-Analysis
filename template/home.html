@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +11,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href='/static/css/main.css'>
 	
@@ -22,18 +20,45 @@
 <body>
 
 <div class="container-fluid" >
-	<h1>Improved Search Engine</h1>
-
-	<form class="example" method = "post"> 
+	
+	<p>Improved Search Engine</p>
+	<form class="example" method = "post">
 		{% csrf_token %}
 		{{ form }}
 
-		
 	<button type="submit"><i class="fa fa-search"></i></button>
+
 
 
 </form>
 </div>
+
+<!-- https://www.w3schools.com/bootstrap4/bootstrap_forms_custom.asp -->
+<!-- This is the code for the radio buttons-->
+<div class="container mt-3">
+	<form class = "radio">
+	  <div class="custom-control custom-radio custom-control-inline">
+		  
+		<input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
+		<label class="custom-control-label" for="customRadio">Positive</label>
+	  </div>
+		
+		
+	  <div class="custom-control custom-radio custom-control-inline">
+		<input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
+		<label class="custom-control-label" for="customRadio2">Negative</label>
+	  </div>
+		
+		<div class="custom-control custom-radio custom-control-inline">
+		<input type="radio" class="custom-control-input" id="customRadio3" name="example" value="customEx">
+		<label class="custom-control-label" for="customRadio3">Not Applicable</label>
+	  </div>
+		
+		
+	
+	</form>
+		
+
 </body>
 </html>
 
