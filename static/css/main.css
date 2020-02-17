@@ -2,9 +2,8 @@ p{
   font-family: 'Segoe UI', sans-serif;
   font-size: 40px;
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 150px;
   color: white;
+  padding-top: 10%;
 }
 
 * {
@@ -17,7 +16,9 @@ form.example input[type=text] {
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: 80%;
+  width: 45%;
+  margin-left: 20%;
+  margin-top: 15px;
   background: whitesmoke;
   
   
@@ -27,7 +28,7 @@ form.example input[type=text] {
 form.example button {
   border-radius: 25px;
   float: left;
-  width: 15%;
+  width: 10%;
   padding: 10px;
   background: #2196F3;
   color: white;
@@ -36,6 +37,8 @@ form.example button {
   border-left: none;
   cursor: pointer;
   margin-left: 5px;
+  margin-top: 15px;
+
     
 }
 
@@ -54,7 +57,7 @@ form.example::after {
 
 body {
 
-  /*background: url("/static/Img/uregina.jpg")no-repeat center center fixed; ;*/
+  /*background: url("/static/Img/uregina.jpg")no-repeat center center fixed; */
   /* Full height */
   
   /* Center and scale the image nicely */
@@ -64,8 +67,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: Arial;
-  margin-left: 25%;
-  margin-right:25%;  
   height: 100%;
 
 
