@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from search_engine_app import views
 from django.conf.urls import  url, include
+from search_engine_app.views import ise
+from search_engine_app.views import projectTeam
 #from search_engine.views import search_engineView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search_engine_app/',views.search),
+    path('search_engine_app/', views.radio),
+    path('search_engine_app/ise.html', views.ise),
+    path('search_engine_app/projectTeam.html', views.projectTeam),
     
 ]
