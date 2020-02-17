@@ -1,0 +1,45 @@
+/* This is the styles file */
+
+
+body,h1,h2,h3,h4,h5,pre {
+    font-family: "Poppins", sans-serif
+}
+
+body {
+    font-size: 16px;
+}
+
+.image {
+    margin-bottom: -8px; width=1500px; height=1000px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.w3-col .image2{
+    width: 300px;
+    height: 400px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.w3-col .caption{
+    padding: 10px;
+    text-align: center
+}
+
+.w3-col .image3{
+    width: 380px;
+    height: 250px;
+    margin-top: 50px;  
+}
+
+.w3-col .caption1{
+    padding: 10px;
+    text-align: center;
+}
+
+.w3-container .w3-row{
+    margin-top: 64px;
+}
