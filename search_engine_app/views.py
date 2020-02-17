@@ -32,3 +32,11 @@ def search(request):
         log.error('An exception occurred: {}'.format(e))
         log.error(traceback.format_exc())
         
+        
+        
+def ise(request):
+    return render(request, "ise.html")
+
+def projectTeam(request):
+    return render(request, "projectTeam.html")
+        
