@@ -20,10 +20,11 @@ def search(request):
             if form.is_valid():
                 topic=form.cleaned_data['name']
                 log.debug("\n topic to be searched-%s"%(topic))
-                search_web_obj=SearchWeb(topic,final_output={})
+                sentiment="positive"
+                search_web_obj=SearchWeb(topic,final_output={},sentiment="positive",sentiment_dict={})
                 result=search_web_obj.thread_func()
                 log.debug("\n final result recevied in views.py %s"%(result))
-                return render(request,"results.html",{'result':result})
+                return render(request,"results.html",{'result':result,'sentiment':sentiment})
 
         form = ContactForms()
         return render(request,"home.html",{'form':form}) 
