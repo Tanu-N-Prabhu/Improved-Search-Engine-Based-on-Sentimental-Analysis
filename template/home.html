@@ -52,7 +52,7 @@
 
 <div class="container-fluid" >
 	
-	<p>Improved Search Engine</p>
+	<p class= "title">Improved Search Engine</p>
 	<form class="example" method = "post">
 		{% csrf_token %}
 		{{ form }}
@@ -60,25 +60,36 @@
 
 	<button type="submit"><i class="fa fa-search"></i></button>
 	
-</form>
-
-
-	<form class="form-inline" method='POST' action="" enctype='multipart/form-data'>{% csrf_token %}
-
-	{{form.NUMS}}
-
 	</form>
+
 
 </div>
 
 
   
-  
-  
-  
-  
-		
+	<form class="radio" method="POST">
+		{% csrf_token %}
+		{{ form1.options.0 }}    {{form1.options.1}}    {{form1.options.2}}
+		<button type="submit">Submit</button>
+	</form>
 
+
+
+	{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <p class=" {{message.tags}}">
+            {{message}}
+
+        </p>
+
+        {% endfor %}
+
+
+    </ul>
+    {% endif %}
+  
+ 
 </body>
 </html>
 
