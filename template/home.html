@@ -41,8 +41,8 @@
 			  
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			  <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			  <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			</ul>
 		  </div>
 		</div>
@@ -53,41 +53,30 @@
 <div class="container-fluid" >
 	
 	<p class= "title">Improved Search Engine</p>
+	
 	<form class="example" method = "post">
 		{% csrf_token %}
-		{{ form }}
+		{{ form.name }}
 
 
 	<button type="submit"><i class="fa fa-search"></i></button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p class="radio">{{ form.options.0 }}    {{form.options.1}}    {{form.options.2}}</p>
 	
 	</form>
 
+	
+
+
+		
+
+
 
 </div>
-
-
   
-	<form class="radio" method="POST">
-		{% csrf_token %}
-		{{ form1.options.0 }}    {{form1.options.1}}    {{form1.options.2}}
-		<button type="submit">Submit</button>
-	</form>
-
-
-
-	{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <p class=" {{message.tags}}">
-            {{message}}
-
-        </p>
-
-        {% endfor %}
-
-
-    </ul>
-    {% endif %}
   
  
 </body>
