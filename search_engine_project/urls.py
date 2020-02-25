@@ -19,13 +19,23 @@ from search_engine_app import views
 from django.conf.urls import  url, include
 from search_engine_app.views import ise
 from search_engine_app.views import projectTeam
+from search_engine_app.views import login
+from search_engine_app.views import signUp
+
+
 #from search_engine.views import search_engineView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search_engine_app/',views.search),
-    path('search_engine_app/', views.radio),
+
+    
     path('search_engine_app/ise.html', views.ise),
     path('search_engine_app/projectTeam.html', views.projectTeam),
+    path('search_engine_app/login.html',  views.login),
+    path('search_engine_app/signUp.html',  views.signUp),
+
     
 ]
+
+
