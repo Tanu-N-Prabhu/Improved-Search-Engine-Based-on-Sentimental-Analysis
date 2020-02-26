@@ -18,11 +18,9 @@ form.example input[type=text] {
   float: left;
   width: 45%;
   margin-left: 20%;
-  margin-top: 15px;
+  margin-top: 5px;
   background: whitesmoke;
   
-  
-    
 }
 form.example button {
   border-radius: 25px;
@@ -36,7 +34,7 @@ form.example button {
   border-left: none;
   cursor: pointer;
   margin-left: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
 
     
 }
@@ -53,18 +51,20 @@ form.example::after {
     
 }
 
-form.radio {
-  margin-top: 20px;
-  margin-left: 650px;
+p.radio {
+  margin-top: -10px;
+  margin-left: 300px;
   color: white;
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
-  transform: scale(1.5);
+  zoom:150%;
+  
+  
 }
+
 
 p{
   color: white;
 }
+
 
 body {
 
