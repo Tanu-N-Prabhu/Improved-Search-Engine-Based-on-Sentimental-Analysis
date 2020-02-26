@@ -1,122 +1,137 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Team</title>
 
-<link rel="stylesheet" href="/static/css/projectTeamStyles.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<!-- Team -->
-<section id="team" class="pb-5">
-    <div class="container">
-        <h5 class="section-title h1">Project Team</h5>
-        <div class="row">
-            
-            <!-- Team member1 (Front Card) -->
-            <div class="col-sm-6">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src=" https://miro.medium.com/max/3150/2*SC2GMi97J7iWruSt0fjdaA.jpeg" alt="card image"></p>
-                                    <h3 class="card-title">Tanu Nanda Prabhu</h3>
-                                    <p class="card-text">Pursuing Master in Computer Science - Course Based
-                                        <br>
-                                        University of Regina, Canada</p>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="/static/css/projectTeamStyles.css">
+    <!-- Team -->
+</head>
+<body>
+    {% include 'navBar.html' %}
+    <section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h1">Project Team</h5>
+            <div class="row">
+                
+                <!-- Team member1 (Front Card) -->
+                <div class="col-sm-6">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src=" https://miro.medium.com/max/3150/2*SC2GMi97J7iWruSt0fjdaA.jpeg" alt="card image"></p>
+                                        <h3 class="card-title">Tanu Nanda Prabhu</h3>
+                                        <p class="card-text">Pursuing Master in Computer Science - Course Based
+                                            <br>
+                                            University of Regina, Canada</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Team member1 (Back Card) -->
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h3 class="card-title">Tanu Nanda Prabhu</h3>
-                                    <p class="card-text">My main contribution to this project is front-end that include coding in HTML, CSS, Javascript and Bootstrap and little bit of backend that includes coding in python via Django web framework.</p>
-                                    <h3 class="card-title">Contact Options</h3>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://m.facebook.com/tanun.prabhu">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.instagram.com/tanunprabhu/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://github.com/Tanu-N-Prabhu">
-                                                <i class="fa fa-github"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.google.com/search?q=tanu+n+prabhu&oq=tanu+n+prabhu+&aqs=chrome.0.69i59l3j69i60l3.3125j0j7&sourceid=chrome&ie=UTF-8">
-                                                <i class="fa fa-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                            
+                            <!-- Team member1 (Back Card) -->
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h3 class="card-title">Tanu Nanda Prabhu</h3>
+                                        <p class="card-text">My main contribution to this project is front-end that include coding in HTML, CSS, Javascript and Bootstrap and little bit of backend that includes coding in python via Django web framework.</p>
+                                        <h3 class="card-title">Contact Options</h3>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://m.facebook.com/tanun.prabhu">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.instagram.com/tanunprabhu/">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://github.com/Tanu-N-Prabhu">
+                                                    <i class="fa fa-github"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.google.com/search?q=tanu+n+prabhu&oq=tanu+n+prabhu+&aqs=chrome.0.69i59l3j69i60l3.3125j0j7&sourceid=chrome&ie=UTF-8">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- ./Team member1  -->
-            
-            <!-- Team member2  -->
-            <div class="col-sm-6">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://www.w3schools.com/howto/img_avatar.png"></p>
-                                    <h3 class="card-title">Adarsh Koppa Manjunath</h3>
-                                    <p class="card-text">Pursuing Master in Computer Science - Course Based
-                                        <br>
-                                        University of Regina, Canada</p>
+                
+                <!-- ./Team member1  -->
+                
+                <!-- Team member2  -->
+                <div class="col-sm-6">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://www.w3schools.com/howto/img_avatar.png"></p>
+                                        <h3 class="card-title">Adarsh Koppa Manjunath</h3>
+                                        <p class="card-text">Pursuing Master in Computer Science - Course Based
+                                            <br>
+                                            University of Regina, Canada</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h3 class="card-title">Adarsh Koppa Manjunath</h3>
-                                    <p class="card-text">My main contribution to this project is back-end that include coding in Python via Django web framework and data bases and little bit of front end that includes HTML, CSS, Javascript and Bootstrap.</p>
-                                    <h3 class="card-title">Contact Options</h3>
-
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://m.facebook.com/adarsh.km.370">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://github.com/AdarshKoppManjunath">
-                                                <i class="fa fa-github"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/adarsh-koppa-m-592259166/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.google.com/search?sxsrf=ACYBGNT9qh2uGLR0ok2R8XJH-mZ9O6ChVg%3A1581798778761&ei=elVIXu39LdX1-gSek5fgBA&q=adarsh+koppa+manjunath+&oq=adarsh+koppa+manjunath+&gs_l=psy-ab.3..35i39.59090.59090..59519...1.0..0.74.211.3......0....1..gws-wiz.wnaDWDGV-PA&ved=0ahUKEwjtosHSs9TnAhXVup4KHZ7JBUwQ4dUDCAs&uact=5">
-                                                <i class="fa fa-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h3 class="card-title">Adarsh Koppa Manjunath</h3>
+                                        <p class="card-text">My main contribution to this project is back-end that include coding in Python via Django web framework and data bases and little bit of front end that includes HTML, CSS, Javascript and Bootstrap.</p>
+                                        <h3 class="card-title">Contact Options</h3>
+    
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://m.facebook.com/adarsh.km.370">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://github.com/AdarshKoppManjunath">
+                                                    <i class="fa fa-github"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/adarsh-koppa-m-592259166/">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.google.com/search?sxsrf=ACYBGNT9qh2uGLR0ok2R8XJH-mZ9O6ChVg%3A1581798778761&ei=elVIXu39LdX1-gSek5fgBA&q=adarsh+koppa+manjunath+&oq=adarsh+koppa+manjunath+&gs_l=psy-ab.3..35i39.59090.59090..59519...1.0..0.74.211.3......0....1..gws-wiz.wnaDWDGV-PA&ved=0ahUKEwjtosHSs9TnAhXVup4KHZ7JBUwQ4dUDCAs&uact=5">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+               
             </div>
-           
         </div>
-    </div>
-</section>
-<!-- Team -->
+    </section>
+    <!-- Team -->
+    
+</body>
+</html>
+
+

@@ -1,84 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta charset="utf-8">
-<!-- This is the code for Bootstrap -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href='/static/css/main.css'>
-	
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href='/static/css/main.css'>
+	<title>Home</title>
 </head>
+
 <body>
 
+	<!-- 
+		Django Template Inheritence
+		Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+		The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+		The basic syntax is "filename.html":
+		Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+		Basically we are extending the navigation bar from navBar.html file
+	-->
+	{% include 'navBar.html' %}
 
-
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-		  <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>                        
-			</button>
-			<a class="navbar-brand" href="ise.html">Improved Search Engine</a>
-		  </div>
-		  <div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-			  <li class="active"><a href="#">Home</a></li>
-			  <li class="inactive"><a href= "projectTeam.html">Project Team</a></li>
-			  
-			  
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			  <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
-
-	  
-
-<div class="container-fluid" >
+	<div class="container-fluid" >
+		<p class= "title">Improved Search Engine</p>
+		<form class="example" method = "post">
+			{% csrf_token %}
+			{{ form.name }}
+		<button type="submit"><i class="fa fa-search"></i></button>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p class="radio">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
+		</form>
+	</div>
 	
-	<p class= "title">Improved Search Engine</p>
-	
-	<form class="example" method = "post">
-		{% csrf_token %}
-		{{ form.name }}
-
-
-	<button type="submit"><i class="fa fa-search"></i></button>
-	<br>
-	<br>
-	<br>
-	<br>
-	<p class="radio">{{ form.options.0 }}    {{form.options.1}}    {{form.options.2}}</p>
-	
-	</form>
-
-	
-
-
-		
-
-
-
-</div>
-  
-  
- 
 </body>
 </html>
 

@@ -4,7 +4,7 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #team {
-    background: #eee !important;
+    background: black !important;
 }
 
 .btn-primary:hover,
@@ -22,19 +22,19 @@
 }
 
 section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 section .section-title {
     text-align: center;
-    color: #007b5e;
+    color: white;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background: grey;
 }
 
 .image-flip:hover .backside,
@@ -86,9 +86,9 @@ section .section-title {
     -o-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
-    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -webkit-box-shadow: 5px 7px 9px -4px white;
+    -moz-box-shadow: 5px 7px 9px -4px white;
+    box-shadow: 5px 7px 9px -4px white;
 }
 
 .frontside,
@@ -116,12 +116,14 @@ section .section-title {
 
 .backside .card a {
     font-size: 25px;
-    color: #007b5e !important;
+    color: black !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: white !important;
+    font-weight: bold;
+
 }
 
 .frontside .card .card-body img {
@@ -132,5 +134,10 @@ section .section-title {
 
 .card-text{
         font-size: 20px;
+        color: white;
     }
+
+  li.list-inline-item i.fa{
+      color: blue;
+  }
 

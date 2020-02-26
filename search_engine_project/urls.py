@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search_engine_app/',views.search),
 
-    
+    path('search_engine_app/home.html', views.search),
     path('search_engine_app/ise.html', views.ise),
     path('search_engine_app/projectTeam.html', views.projectTeam),
     path('search_engine_app/login.html',  views.login),

@@ -1,116 +1,37 @@
+<!-- The author of this code is @Tanu Nanda Prabhu.
+The name of the file is login.html which contains all the html code.
+The second file is loginStyles.css which contains all the related styles.
+And this also contains three images.
+The original code was found fron the website W3Schools.com and most of the modification was done by me
+Source: https://bootsnipp.com/snippets/3522X -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<!------ Include the above in your HEAD tag ---------->
-    <title>Document</title>
+	<link rel="stylesheet" href= "/static/css/loginStyle.css">
+    <title>Login</title>
 </head>
-<style>
-	/* Coded with love by Mutiullah Samim */
-    body,
-		html {
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			background: lightcyan !important;
-		}
-		.user_card {
-			height: 400px;
-			width: 350px;
-			margin-top: auto;
-			margin-bottom: auto;
-			background: darkkhaki;
-			position: relative;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			padding: 10px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			border-radius: 5px;
 
-		}
-		.brand_logo_container {
-			position: absolute;
-			height: 170px;
-			width: 170px;
-			top: -75px;
-			border-radius: 50%;
-			background: rgb(230, 78, 78);
-			padding: 10px;
-			text-align: center;
-		}
-		.brand_logo {
-			height: 150px;
-			width: 150px;
-			border-radius: 50%;
-			border: 2px solid white;
-		}
-		.form_container {
-			margin-top: 100px;
-		}
-		.login_btn {
-			width: 100%;
-			background: rgb(230, 78, 78) !important;
-			color: white !important;
-		}
-		.login_btn:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-		.login_container {
-			padding: 0 2rem;
-		}
-		.input-group-text {
-			background: rgb(230, 78, 78) !important;
-			color: white !important;
-			border: 0 !important;
-            border-radius: 0.25rem 0 0 0.25rem !important;
-            height: 39px;            
-
-		}
-		.input_user,
-		.input_pass:focus {
-			box-shadow: none !important;
-            outline: 0px !important;
-		}
-		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-			background-color: black !important;
-		}
-		
-form input[type=text] {
-  font-size: 15px;
-  border: 0px solid grey;
-padding: 5%;  
-border-radius: 0 0.25rem 0.25rem 0  !important;
-
-}
-h1{
-    color: white;
-margin-top: 50px;
-}
-
-form input[type=password] {
-  font-size: 15px;
-  border: 0px solid grey;
-padding: 5%;  
-border-radius: 0 0.25rem 0.25rem 0 !important;
-}
-
-
-
-</style>
 <body>
+
+	<!-- 
+		Django Template Inheritence
+		Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+		The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+		The basic syntax is "filename.html":
+		Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+		Basically we are extending the navigation bar from navBar.html file
+	-->
+	{% include 'navBar.html' %}
+
     <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -155,5 +76,6 @@ border-radius: 0 0.25rem 0.25rem 0 !important;
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

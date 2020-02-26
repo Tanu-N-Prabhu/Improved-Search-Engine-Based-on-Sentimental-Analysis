@@ -4,7 +4,7 @@ from django import forms
 sentimentOptions= [
     ('positve', 'Postive'),
     ('negative', 'Negative'),
-    ('na', 'N/A'),
+    ('na', 'Neutral'),
     
     ]
 
