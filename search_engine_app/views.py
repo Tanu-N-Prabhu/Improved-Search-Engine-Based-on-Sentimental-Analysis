@@ -20,14 +20,13 @@ def search(request):
 
             if form.is_valid():
                 topic=form.cleaned_data['name']
-                name1 = form.cleaned_data['options']
-                print(name1)
-                #messages.success(request, 'The sentiment you selected was: {}'.format(name1))
+                sentiment = form.cleaned_data['options']
+                
 
                 
                 log.debug("\n topic to be searched-%s"%(topic))
-                sentiment="positive"
-                search_web_obj=SearchWeb(topic,final_output={},sentiment="positive",sentiment_dict={})
+
+                search_web_obj=SearchWeb(topic,final_output={},sentiment=sentiment,sentiment_dict={})
                 result=search_web_obj.thread_func()
                 
                 log.debug("\n final result recevied in views.py %s"%(result))

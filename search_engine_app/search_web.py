@@ -23,7 +23,7 @@ class SearchWeb:
         self.final_output=final_output
         self.sentiment=sentiment
         self.sentiment_dict=sentiment_dict
-        log.debug("Search web objected created with the topic-%s and final_output-%s"%(self.topic,self.final_output))
+        log.debug("Search web objected created with the topic-%s , sentiment - %s and final_output-%s"%(self.topic,self.sentiment,self.final_output))
 
     
     def search_web(self):
@@ -35,7 +35,7 @@ class SearchWeb:
         web_result_list(list)- list of URLs"""
         web_result_list=[]
         try:
-            web_results=search(self.topic,lang="en",num=10,stop=10,pause=1)
+            web_results=search(self.topic,lang="en",num=50,stop=50,pause=1)
             for index in web_results:
                 if index.endswith((".pdf",".docx",".ppt")):
                     log.debug("URL with extensions ignored-%s"%(index))
@@ -52,7 +52,7 @@ class SearchWeb:
 
 
     def extract_content(self,url):
-        """This function  ion takes URL as input and parse it to beautiful soup library to extract content and also clean it at the primary level with basic blacklist filter
+        """This function takes URL as input and parse it to beautiful soup library to extract content and also clean it at the primary level with basic blacklist filter
         @Source: https://stackoverflow.com/questions/328356/extracting-text-from-html-file-using-python
         @Parameter:
             URL(str)- needs to be extracted
@@ -72,7 +72,7 @@ class SearchWeb:
             self.final_output[url]=text[:5000]
 
             text=self.clean_text(text)
-            if self.sentiment!="":
+            if self.sentiment!="na":
                 positive,negative=self.sentiment_analysis(text)
                 log.debug("\n URL:%s \n Positive-%s \n Negative-%s"%(url,positive,negative))
                 if sentiment =="negative":
@@ -86,9 +86,6 @@ class SearchWeb:
             return ""
 
             
-
-            
-
         except Exception as e:
             log.error('An exception occurred: {}'.format(e))
             log.error(traceback.format_exc())
@@ -191,7 +188,9 @@ class SearchWeb:
             for thread in threads:
                 thread.join()
             log.debug("final output from search file-%s"%(self.final_output))
-            self.order_output()
+            if self.sentiment!="na":
+                self.order_output()
+
             return self.final_output
 
         except Exception as e:
