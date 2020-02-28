@@ -26,15 +26,15 @@
 
 	<div class="container-fluid" >
 		<p class= "title">Improved Search Engine</p>
-		<form class="example" method = "post">
+		<form class="example" method = "post" title="Only English language is supported">
 			{% csrf_token %}
 			{{ form.name }}
-		<button type="submit"><i class="fa fa-search"></i></button>
+		<button type="submit" title="Search button"><i class="fa fa-search"></i></button>
 		<br>
 		<br>
 		<br>
 		<br>
-		<p class="radio">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
+		<p class="radio" title="Select one of the option that you want to filter your article">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
 		</form>
 	</div>
 	
