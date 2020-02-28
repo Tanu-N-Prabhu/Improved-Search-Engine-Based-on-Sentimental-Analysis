@@ -8,6 +8,9 @@ from search_engine_app.search_web import SearchWeb
 from search_engine_project.logger import log
 from django.contrib import messages
 from search_engine_app.forms import signUpForm
+from django.db import models
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 
@@ -21,17 +24,13 @@ def search(request):
             if form.is_valid():
                 topic=form.cleaned_data['name']
                 sentiment = form.cleaned_data['options']
-                
-
-                
-                log.debug("\n topic to be searched-%s"%(topic))
-
                 search_web_obj=SearchWeb(topic,final_output={},sentiment=sentiment,sentiment_dict={})
                 result=search_web_obj.thread_func()
-                
-                log.debug("\n final result recevied in views.py %s"%(result))
-                args = {'result':result,'sentiment':sentiment}
-                return render(request,"results.html", args)
+                if type(result)==str:
+                   return HttpResponse("<h> <font size=""3"" color=""red""> %s </font></h>"%(result))
+                else:
+                    args = {'result':result,'sentiment':sentiment}
+                    return render(request,"results.html", args)
 
 
         form = GeneralForms()
@@ -82,16 +81,22 @@ def signUp(request):
                 email = form2.cleaned_data['email']
                 pwd = form2.cleaned_data['pwd']
                 pwdr = form2.cleaned_data['pwdr']
-                print(newName)
-                print(email)
-                print(pwd)
-                print(pwdr)
-                
+                try:
+                    user = User.objects.create_user(newName,email,pwd)
+                    user.is_staff = False
+                    user.save()
+                    
+                except:
+                    return HttpResponse("<h> <font size=""3"" color=""red""> Registration Failed!!!! Username or email address already taken </font></h>")
+            form1 = loginForm()
+            return render(request,"login.html",{'form': form1})
                 
     form2 = signUpForm()
         
         
     return render(request,"signUp.html",{'form': form2}) 
+
+
 
 
 

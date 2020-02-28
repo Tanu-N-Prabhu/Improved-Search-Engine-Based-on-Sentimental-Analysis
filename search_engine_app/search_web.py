@@ -14,6 +14,12 @@ from nltk.tokenize.toktok import ToktokTokenizer
 from nltk.corpus import stopwords
 from textblob import TextBlob
 from search_engine_project.logger import log
+from search_engine_app.validations import validation
+
+
+
+
+
 
 
 class SearchWeb:
@@ -180,6 +186,12 @@ class SearchWeb:
         final_output(Dict): consists URL as key and Description as value
         """
         try:
+            langobj=validation()
+            lang=langobj.isEnglish(self.topic)
+            if lang==False:
+                print("Oops! entered topic is not in English! we support only English language at the moment")
+                return "Oops! entered topic is not in English! we support only English language at the moment"
+
             web_result_list=self.search_web()
             log.debug("List of URLs-%s"%(web_result_list))
             threads = [threading.Thread(target=self.extract_content, args=(url,)) for url in web_result_list]
