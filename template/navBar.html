@@ -2,7 +2,7 @@
 The name of the file is navBar.html which contains all the html code.
 The second file is navBarStyle.css which contains all the related styles.
 The original nav bar code was found fron the website W3Schools.com
-Source: https://www.w3schools.com/css/css_navbar.asp -->
+Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav -->
 
 
 <!DOCTYPE html>
@@ -18,13 +18,14 @@ Source: https://www.w3schools.com/css/css_navbar.asp -->
 <body>
 
   <div class="topnav" id="myTopnav">
-    <a href="ise.html"><i class="fa fa-star"></i>ISE</a>			
-    <a href="home.html" ><i class="fa fa-home"></i>Home</a>
-    <a href="projectTeam.html"><i class="fa fa-users"></i>Project Teams</a>
-    <a href="login.html" class="right"><i class="fa fa-user"></i>Login</a>
-    <a href="signUp.html" class = "right"><i class="fa fa-sign-in"></i>Sign Up</a>
+    <a href="ise.html" title= "Click here to know more about the improved search engine"><i class="fa fa-star" ></i>ISE</a>			
+    <a href="home.html" title= "This takes you to the home page"><i class="fa fa-home"></i>Home</a>
+    <a href="projectTeam.html" title = "Click here to know more about the project teams"><i class="fa fa-users"></i>Project Teams</a>
+    <a href="login.html" title = "Click here to see the trending topics"><i class = "fa fa-line-chart"></i>Trending Topics</a>
+    <a href="login.html" class="right" title="Click here to login to the application"><i class="fa fa-user"></i>Login</a>
+    <a href="signUp.html" class = "right" title="Click here to create a new user account"><i class="fa fa-sign-in"></i>Sign Up</a>
     <!-- This code is for the three horizontal bar which would be enabled when the screen is shrinked (Responisive)-->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Click here to expand the menu"><i class="fa fa-bars"></i></a>
   </div>
 
 </body>
