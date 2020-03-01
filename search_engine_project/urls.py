@@ -23,6 +23,7 @@ from search_engine_app.views import login
 from search_engine_app.views import signUp
 
 
+
 #from search_engine.views import search_engineView
 
 urlpatterns = [
@@ -34,6 +35,8 @@ urlpatterns = [
     path('search_engine_app/projectTeam.html', views.projectTeam),
     path('search_engine_app/login.html',  views.login),
     path('search_engine_app/signUp.html',  views.signUp),
+    path("search_engine_app/trending.html",views.trending),
+   
 
     
 ]
