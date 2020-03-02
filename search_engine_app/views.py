@@ -10,7 +10,8 @@ from django.contrib import messages
 from search_engine_app.forms import signUpForm
 from django.db import models
 from django.contrib.auth.models import User
-
+from search_engine_app.user_permissions import Authentication
+from search_engine_app.trending_topics import TrendingTopics
 # Create your views here.
 
 
@@ -60,8 +61,15 @@ def login(request):
             if form1.is_valid():
                 uname = form1.cleaned_data['uname']
                 pwd = form1.cleaned_data['pwd']
-                print(uname)
-                print(pwd)
+                authentication_obj=Authentication(uname,pwd)
+                user_status=authentication_obj.user_credential_check()
+                print(user_status)
+                if user_status=="invalid user":
+                    return HttpResponse("<h> <font size=""3"" color=""red""> Invalid Credentials!!! Login failed</font></h>")
+                else:
+                   return render(request,"userpage.html") 
+                    
+                
                 
                 
     form1 = loginForm()
@@ -96,6 +104,12 @@ def signUp(request):
         
     return render(request,"signUp.html",{'form': form2}) 
 
+def trending(request):
+    if request.method=="GET":
+        trendingObj=TrendingTopics()
+        trending_res=trendingObj.trending_topics()
+        trending_res={'trending_res':trending_res}
+        return render(request,"trending.html",trending_res)
 
 
 
