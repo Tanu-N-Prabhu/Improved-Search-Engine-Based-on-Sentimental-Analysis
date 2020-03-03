@@ -57,6 +57,8 @@ def ise(request):
 def projectTeam(request):
     return render(request, "projectTeam.html")
 
+def viewYourUpdatedResult(request):
+    return render(request, "viewYourUpdatedResults.html")
 '''
 def login(request):
     if request.method=="POST":
