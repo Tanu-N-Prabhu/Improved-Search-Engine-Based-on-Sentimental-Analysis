@@ -19,8 +19,12 @@ from search_engine_app import views
 from django.conf.urls import  url, include
 from search_engine_app.views import ise
 from search_engine_app.views import projectTeam
-from search_engine_app.views import login
-from search_engine_app.views import signUp
+#from search_engine_app.views import login
+#from search_engine_app.views import signUp
+from search_engine_app.views import loginPage
+from search_engine_app.views import registerPage
+from search_engine_app.views import logoutUser
+from search_engine_app.views import userPortal
 
 
 
@@ -33,9 +37,12 @@ urlpatterns = [
     path('search_engine_app/home.html', views.search),
     path('search_engine_app/ise.html', views.ise),
     path('search_engine_app/projectTeam.html', views.projectTeam),
-    path('search_engine_app/login.html',  views.login),
-    path('search_engine_app/signUp.html',  views.signUp),
+    path('search_engine_app/login.html',  views.loginPage, name = 'login'),
+    path('search_engine_app/register.html',  views.registerPage),
+    path("logout", logoutUser, name="logout"),
+    #path('search_engine_app/signUp.html',  views.signUp),
     path("search_engine_app/trending.html",views.trending),
+    path("search_engine_app/userPortal.html",views.userPortal),
    
 
     
