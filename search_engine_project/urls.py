@@ -18,6 +18,9 @@ from django.urls import path
 from search_engine_app import views
 from django.conf.urls import  url, include
 from search_engine_app.views import ise
+from search_engine_app.views import viewYourUpdatedResult
+
+
 from search_engine_app.views import projectTeam
 #from search_engine_app.views import login
 #from search_engine_app.views import signUp
@@ -43,6 +46,9 @@ urlpatterns = [
     #path('search_engine_app/signUp.html',  views.signUp),
     path("search_engine_app/trending.html",views.trending),
     path("search_engine_app/userPortal.html",views.userPortal),
+    path("search_engine_app/viewYourUpdatedResults.html",views.viewYourUpdatedResult),
+
+
    
 
     
