@@ -32,8 +32,11 @@ def search(request):
                 sentiment = form.cleaned_data['options']
                 search_web_obj=SearchWeb(topic,final_output={},sentiment=sentiment,sentiment_dict={})
                 result=search_web_obj.thread_func()
+
                 if type(result)==str:
-                   return HttpResponse("<h> <font size=""3"" color=""red""> %s </font></h>"%(result))
+                    args = {'result': result}
+
+                    return render(request, "alert.html", args)
                 else:
                     args = {'result':result,'sentiment':sentiment}
                     return render(request,"results.html", args)
@@ -131,6 +134,7 @@ def loginPage(request):
 	if request.method == 'POST':
 		username = request.POST.get('username')
 		password = request.POST.get('password')
+        
 
 		user = authenticate(request, username = username, password = password )
 
@@ -161,9 +165,13 @@ def userPortal(request):
 
             if form3.is_valid():
                 topic = form3.cleaned_data['topic']
-                country = form3.cleaned_data['country']
+                sentiment = form3.cleaned_data['options']
+                messages.success(request, 'Thankyou for giving all the information')
+
+                #country = form3.cleaned_data['country']
                 print(topic)
-                print(country)
+                print(sentiment)
+                print(request.user)
            
             
     form3 = userPortalForms()
