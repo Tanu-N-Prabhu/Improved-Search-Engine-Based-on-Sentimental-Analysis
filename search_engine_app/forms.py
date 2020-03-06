@@ -12,9 +12,9 @@ sentimentOptions= [
     ]
 
 INTEGER_CHOICES= [
-       ('canada', 'Canada'),
-    ('usa', 'USA'),
-    ('india', 'India'),
+       ('positve', 'Postive'),
+    ('negative', 'Negative'),
+    ('na', 'Neutral'),
 ]
 
 
@@ -24,7 +24,9 @@ class GeneralForms(forms.Form):
 
 class userPortalForms(forms.Form):
     topic = forms.CharField(label = '', widget=forms.TextInput(attrs={'placeholder':'  Enter topic to follow up'}))
-    country =forms.CharField(label="", widget=forms.Select(choices=INTEGER_CHOICES))
+    options =forms.CharField(label="", widget=forms.Select(choices=INTEGER_CHOICES))
+    #options = forms.CharField(label='Please select the sentiment', widget=forms.RadioSelect(choices=sentimentOptions))
+
 
 
 class loginForm(forms.Form):
