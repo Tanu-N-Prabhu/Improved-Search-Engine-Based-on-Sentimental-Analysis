@@ -124,7 +124,7 @@
 			border: 2px solid white;
 		}
 		.form_container {
-			margin-top: 50px;
+			margin-top: 100px;
 		}
 		.login_btn {
 			width: 50%;
@@ -160,6 +160,8 @@
         font-size: 15px;
         border: 0px solid grey;
         padding: 5%;  
+        width: 250px;
+        height: 39px;        
         border-radius: 0 0.25rem 0.25rem 0  !important;
 
         }
@@ -178,11 +180,19 @@
         form select{
         border: 0px solid grey;
         padding: 5%; 
-        width: 200px;
+        width: 250px;
+        height: 39px;
         font-size: 15px; 
         border-radius: 0 0.25rem 0.25rem 0 !important;
         }
-   
+
+        p.heading{
+          color: white;
+          text-align: center;
+        }
+
+ 
+
         
         </style>
             <div class="topnav" id="myTopnav">
@@ -204,8 +214,18 @@
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Click here to expand the menu"><i class="fa fa-bars"></i></a>
               </div>
 
-
+   
+                 <!-- End of Main Content --> 
               <div class="container h-100">
+                
+                       <!-- Main Content -->
+                       <div id="content">
+
+                        {% include 'messages.html' %}
+                
+                        {% block content %}  {% endblock content %}
+                        
+                      </div>
                 <div class="d-flex justify-content-center h-100">
                   <div class="user_card">
                     <div class="d-flex justify-content-center">
@@ -219,25 +239,30 @@
                                     {% csrf_token %}
                         <div class="input-group mb-2">
                           <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-header"></i></span>
+                            <span class="input-group-text"><i class="fas fa-newspaper"></i></span>
                           </div>
                           <p> {{ form.topic}} </p>
                         </div>
-                        <p>Select a country to view trending topic</p>
+
+                        
+
+                        
+                        <p class="heading">Select the sentiment of the article</p>
 
                         <div class="input-group mb-2">
                           <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                            <span class="input-group-text"><i class="fas fa-filter"></i></span>
                           </div>
-                          <p class="dropdown"> {{ form.country}} </p>
+                          <p class="dropdown"> {{ form.options}} </p>
                         </div>
-                      
+                  
                           <div class="d-flex justify-content-center mt-3 login_container">
                        <button type="submit" name="button" class="btn login_btn">Save</button>
                        </div>
-<br>
+                    <br>
 <br>
                        <a href="viewYourUpdatedResults.html" style="color: white;">View Your Updated Results</a>
+                   
                       </form>
                     </div>
                 
@@ -247,7 +272,10 @@
               </div>  
 </body>
 <script>
-
-setTimeout(() => window.alert("Welcome to your portal," + " " + '{{ request.user }}'), 500);
-</script>
+  setTimeout(function(){
+    if ($('#msg').length > 0) {
+      $('#msg').remove();
+    }
+  }, 2000)
+</script> 
 </html>
