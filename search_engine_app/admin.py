@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Feedback
-from .models import Trendingtopics
+from .models import UserPortal
 
 
 admin.site.register(Feedback)
-admin.site.register(Trendingtopics)
+admin.site.register(UserPortal)

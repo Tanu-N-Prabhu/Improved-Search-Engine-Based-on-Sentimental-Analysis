@@ -24,11 +24,13 @@ from search_engine_app.validations import validation
 
 class SearchWeb:
 
-    def __init__(self,topic,final_output={},sentiment="",sentiment_dict={}):
+    def __init__(self,topic,sentiment="",num=50,stop=50,final_output={},sentiment_dict={}):
         self.topic=topic
         self.final_output=final_output
         self.sentiment=sentiment
         self.sentiment_dict=sentiment_dict
+        self.num=num
+        self.stop=stop
         log.debug("Search web objected created with the topic-%s , sentiment - %s and final_output-%s"%(self.topic,self.sentiment,self.final_output))
 
     
@@ -41,7 +43,7 @@ class SearchWeb:
         web_result_list(list)- list of URLs"""
         web_result_list=[]
         try:
-            web_results=search(self.topic,lang="en",num=50,stop=50,pause=1)
+            web_results=search(self.topic,lang="en",num=self.num,stop=self.stop,pause=1)
             for index in web_results:
                 if index.endswith((".pdf",".docx",".ppt")):
                     log.debug("URL with extensions ignored-%s"%(index))

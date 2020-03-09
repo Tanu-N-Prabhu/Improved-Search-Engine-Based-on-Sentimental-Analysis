@@ -12,8 +12,8 @@ class Authentication:
             user = authenticate(username=self.username, password=self.password)
             
             if user is not None:
-                return "valid user"
+                return ("valid user",user)
             else:
-                return "invalid user"
+                return ("invalid user",user)
         except:
-            return "invalid user"
+            return ("invalid user",user)

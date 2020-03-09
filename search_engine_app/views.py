@@ -12,13 +12,16 @@ from django.contrib import messages
 from django.db import models
 from django.contrib.auth.models import User
 from search_engine_app.user_permissions import Authentication
-from search_engine_app.trending_topics import TrendingTopics
+from search_engine_app.observer_pattern.subject_topic import Publisher
+#from search_engine_app.trending_topics import TrendingTopics
 # Create your views here.
 
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+
+
 
 def search(request):
     """This function communicates between template and search_web files"""
@@ -61,59 +64,11 @@ def projectTeam(request):
     return render(request, "projectTeam.html")
 
 def viewYourUpdatedResult(request):
+   
+
+    
     return render(request, "viewYourUpdatedResults.html")
-'''
-def login(request):
-    if request.method=="POST":
-            
-            form1 = loginForm(request.POST)
 
-            if form1.is_valid():
-                uname = form1.cleaned_data['uname']
-                pwd = form1.cleaned_data['pwd']
-                authentication_obj=Authentication(uname,pwd)
-                user_status=authentication_obj.user_credential_check()
-                print(user_status)
-                if user_status=="invalid user":
-                    return HttpResponse("<h> <font size=""3"" color=""red""> Invalid Credentials!!! Login failed</font></h>")
-                else:
-                   return render(request,"userpage.html") 
-                    
-                
-                
-                
-    form1 = loginForm()
-        
-        
-    return render(request,"login.html",{'form': form1}) 
-
-
-
-def signUp(request):
-    if request.method=="POST":
-            
-            form2 = signUpForm(request.POST)
-
-            if form2.is_valid():
-                newName = form2.cleaned_data['newName']
-                email = form2.cleaned_data['email']
-                pwd = form2.cleaned_data['pwd']
-                pwdr = form2.cleaned_data['pwdr']
-                try:
-                    user = User.objects.create_user(newName,email,pwd)
-                    user.is_staff = False
-                    user.save()
-                    
-                except:
-                    return HttpResponse("<h> <font size=""3"" color=""red""> Registration Failed!!!! Username or email address already taken </font></h>")
-            form1 = loginForm()
-            return render(request,"login.html",{'form': form1})
-                
-    form2 = signUpForm()
-        
-        
-    return render(request,"signUp.html",{'form': form2}) 
-'''
 
 def registerPage(request):
 	form = CreateUserForm()
@@ -166,12 +121,11 @@ def userPortal(request):
             if form3.is_valid():
                 topic = form3.cleaned_data['topic']
                 sentiment = form3.cleaned_data['options']
-                messages.success(request, 'Thankyou for giving all the information')
-
-                #country = form3.cleaned_data['country']
-                print(topic)
-                print(sentiment)
-                print(request.user)
+                subject=Publisher()
+                status=subject.add_newsreader(request.user,topic,sentiment)
+                notification=subject.notify()
+                print(notification)
+                messages.success(request, status)
            
             
     form3 = userPortalForms()
