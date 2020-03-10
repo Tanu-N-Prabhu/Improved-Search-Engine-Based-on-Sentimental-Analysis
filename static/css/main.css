@@ -1,4 +1,21 @@
-p.title{
+/**
+ * main.css
+ *
+ * The home page should be easily understandable. So I have used updated google fonts that look better on all screens.
+ * Author: Tanu Nanda Prabhu
+ * 
+ *
+ * Index
+ * - Form Buttons
+ * - Fonts
+ * - Radio Buttons
+ * - Search Button
+ * - Input Text Area
+ *
+ */
+
+p.title
+{
   font-family: 'Segoe UI', sans-serif;
   font-size: 40px;
   text-align: center;
@@ -6,11 +23,13 @@ p.title{
   padding-top: 10%;
 }
 
-* {
+* 
+{
   box-sizing: border-box;
 }
 
-form.example input[type=text] {
+form.example input[type=text] 
+{
   border-radius: 25px;
   padding: 10px;
   font-size: 17px;
@@ -22,7 +41,9 @@ form.example input[type=text] {
   background: whitesmoke;
   
 }
-form.example button {
+
+form.example button 
+{
   border-radius: 25px;
   float: left;
   width: 10%;
@@ -35,56 +56,45 @@ form.example button {
   cursor: pointer;
   margin-left: 5px;
   margin-top: 5px;
-
-    
 }
 
-form.example button:hover {
-  background: #0b7dda;
-    
+form.example button:hover 
+{
+  background: #0b7dda; 
 }
 
-form.example::after {
+form.example::after 
+{
   content: "";
   clear: both;
-  display: table;
-    
+  display: table;   
 }
 
-p.radio {
+p.radio 
+{
   margin-top: -10px;
-  margin-left: 250px;
-  color: white;
+  text-align: center;  color: white;
   zoom:150%;
-  
-  
 }
 
-
-p{
+p
+{
   color: white;
 }
 
-
-body {
-
-  /*background: url("/static/Img/uregina.jpg")no-repeat center center fixed; */
-  /* Full height */
-  
-  /* Center and scale the image nicely */
-  background: url("/static/Img/lights-night-dark-long-exposure-1679719.jpg")no-repeat center center fixed;
+body 
+{
+  background: url("/static/Img/lights-night-dark-long-exposure-1679719.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   font-family: Arial;
   height: 100%;
-
-
 }
 
-
-label.custom-control-label{
+label.custom-control-label
+{
   color: white;
 }
 
