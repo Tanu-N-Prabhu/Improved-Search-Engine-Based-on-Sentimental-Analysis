@@ -1,47 +1,39 @@
+<!-- 
+	The author of this code is @Tanu Nanda Prabhu.
+	The name of the file is home.html which contains all the html code.
+	This html file has a associated CSS file which is called main.css located in the static folder static\css\main.css.
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--This is the for invoking the CSS file (main.css)-->
 	<link rel="stylesheet" href='/static/css/main.css'>
-	<title>Home</title>
+	<title>Home Page</title>
 </head>
-
-<body>
-
-	<!-- 
-		Django Template Inheritence
-		Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
-		The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
-		The basic syntax is "filename.html":
-		Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
-		Basically we are extending the navigation bar from navBar.html file
-	-->
-	{% include 'navBar.html' %}
-
-	<div class="container-fluid" >
-		<p class= "title">Improved Search Engine</p>
-		<form class="example" method = "post" title="Only English language is supported">
-			{% csrf_token %}
-			{{ form.name }}
-		<button type="submit" title="Search button"><i class="fa fa-search"></i></button>
-		<br>
-		<br>
-		<br>
-		<br>
-		<p class="radio" title="Select one of the option that you want to filter your article">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
-		</form>
-	</div>
-	
-</body>
+	<body>
+		<!-- 
+			Django Template Inheritence
+			Loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+			The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+			The basic syntax is  inlcude "filename.html"
+			Source: https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+			Basically we are extending the navigation bar from navBar.html file
+		-->
+		{% include 'navBar.html' %}
+		<div class="container-fluid" >
+			<p class= "title">Improved Search Engine</p>
+			<form class="example" method = "post" title="Only English language is supported">
+				{% csrf_token %}
+				{{ form.name }}
+			<button type="submit" title="Search button"><i class="fa fa-search"></i></button>
+			<div class="custom-control custom-radio">
+			<br>
+			<br>
+			<br>
+			<br>
+			<p class="radio" title="Select one of the option that you want to filter your article">{{ form.options.0 }} &nbsp;&nbsp;&nbsp;&nbsp;  {{form.options.1}} &nbsp;&nbsp;&nbsp;&nbsp;    {{form.options.2}}</p>
+			</div>
+			</form>
+		</div>
+	</body>
 </html>
-
-
-
-
-  
