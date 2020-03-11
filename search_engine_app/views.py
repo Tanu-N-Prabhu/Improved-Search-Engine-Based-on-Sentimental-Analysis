@@ -12,7 +12,6 @@ from django.contrib import messages
 from django.db import models
 from django.contrib.auth.models import User
 from search_engine_app.user_permissions import Authentication
-from search_engine_app.observer_pattern.subject_topic import Publisher
 #from search_engine_app.trending_topics import TrendingTopics
 # Create your views here.
 
