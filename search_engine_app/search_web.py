@@ -7,7 +7,7 @@ import urllib.request
 import urllib.error
 import time
 from multiprocessing import Pool
-from google import google
+import google
 import re
 import nltk
 from nltk.tokenize.toktok import ToktokTokenizer
