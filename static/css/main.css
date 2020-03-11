@@ -84,7 +84,7 @@ p
 
 body 
 {
-  background: url("/static/Img/lights-night-dark-long-exposure-1679719.jpg") no-repeat center center fixed;
+  /*background: url("/static/Img/lights-night-dark-long-exposure-1679719.jpg") no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
